@@ -47,6 +47,60 @@
       background-repeat: no-repeat;
     }
 
+    /* STAR LAYER TO BRIGHTEN BACKGROUND */
+    .stars {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: -2;
+      opacity: 0.45;
+      background-image:
+        radial-gradient(2px 2px at 10% 20%, rgba(255, 255, 255, 0.6), transparent),
+        radial-gradient(2px 2px at 30% 80%, rgba(255, 255, 255, 0.5), transparent),
+        radial-gradient(2px 2px at 70% 30%, rgba(255, 255, 255, 0.55), transparent),
+        radial-gradient(2px 2px at 90% 60%, rgba(255, 255, 255, 0.4), transparent),
+        radial-gradient(2px 2px at 50% 10%, rgba(255, 255, 255, 0.35), transparent);
+    }
+
+    /* SWIRLS */
+    .swirl {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: -1;
+      opacity: 0.7;
+      mix-blend-mode: screen;
+    }
+
+    .swirl::before,
+    .swirl::after {
+      content: "";
+      position: absolute;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 138, 60, 0.35);
+      opacity: 0.45;
+      filter: blur(0.2px);
+    }
+
+    .swirl::before {
+      width: 340px;
+      height: 340px;
+      top: 14%;
+      left: -120px;
+      transform: rotate(-18deg);
+      border-top: none;
+      border-right: none;
+    }
+
+    .swirl::after {
+      width: 420px;
+      height: 420px;
+      bottom: -180px;
+      right: -80px;
+      border-bottom: none;
+      border-left: none;
+    }
+
     /* NAVBAR */
     header {
       position: sticky;
@@ -78,13 +132,13 @@
       gap: 0.7rem;
     }
 
-    /* MODERN ORB LOGO */
+    /* MODERN SQUARE ORB LOGO WITH SWIRLS */
     .brand-badge {
       position: relative;
       width: 34px;
       height: 34px;
-      border-radius: 999px;
-      background: radial-gradient(circle at 20% 0%, #ffe9d1 0, #ffb37a 35%, #ff8a3c 60%, #1a0a05 100%);
+      border-radius: 22%;
+      background: radial-gradient(circle at 20% 0%, #ffffff 0, #ffe9d1 25%, #ffb37a 45%, #ff8a3c 70%, #1a0a05 100%);
       box-shadow:
         0 0 20px rgba(255, 138, 60, 0.6),
         0 0 45px rgba(255, 255, 255, 0.15);
@@ -95,22 +149,35 @@
       content: "";
       position: absolute;
       inset: 4px;
-      border-radius: 999px;
-      border: 1px solid rgba(255, 255, 255, 0.45);
-      opacity: 0.65;
+      border-radius: 24%;
+      border: 1px solid rgba(255, 255, 255, 0.5);
+      opacity: 0.8;
     }
 
     .brand-badge::after {
       content: "";
       position: absolute;
-      width: 130%;
-      height: 130%;
-      border-radius: 999px;
+      width: 140%;
+      height: 140%;
+      border-radius: 50%;
+      border: 1px solid rgba(255, 255, 255, 0.24);
+      top: -65%;
+      left: -10%;
+      transform: rotate(20deg);
+      opacity: 0.85;
+      mix-blend-mode: screen;
+    }
+
+    .brand-badge-inner-swirl {
+      position: absolute;
+      width: 200%;
+      height: 200%;
+      border-radius: 50%;
       border: 1px solid rgba(255, 255, 255, 0.18);
-      top: -60%;
-      left: -15%;
-      transform: rotate(18deg);
-      opacity: 0.8;
+      top: -40%;
+      left: -60%;
+      transform: rotate(-32deg);
+      opacity: 0.75;
       mix-blend-mode: screen;
     }
 
@@ -198,7 +265,7 @@
       height: 18px;
       border-radius: 999px;
       border: 1px solid rgba(255, 138, 60, 0.8);
-      background: rgba(255, 255, 255, 0.04);
+      background: rgba(255, 255, 255, 0.05);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -215,48 +282,9 @@
       margin-left: auto;
       margin-right: auto;
       line-height: 1.5;
-      background: radial-gradient(circle at 0 0, rgba(255, 255, 255, 0.03) 0, transparent 55%);
+      background: radial-gradient(circle at 0 0, rgba(255, 255, 255, 0.04) 0, transparent 55%);
       padding: 0.5rem 0.4rem 0.2rem;
       border-radius: 12px;
-    }
-
-    /* SWIRLS */
-    .swirl {
-      position: fixed;
-      inset: 0;
-      pointer-events: none;
-      z-index: -1;
-      opacity: 0.7;
-      mix-blend-mode: screen;
-    }
-
-    .swirl::before,
-    .swirl::after {
-      content: "";
-      position: absolute;
-      border-radius: 999px;
-      border: 1px solid rgba(255, 138, 60, 0.35);
-      opacity: 0.45;
-      filter: blur(0.2px);
-    }
-
-    .swirl::before {
-      width: 340px;
-      height: 340px;
-      top: 14%;
-      left: -120px;
-      transform: rotate(-18deg);
-      border-top: none;
-      border-right: none;
-    }
-
-    .swirl::after {
-      width: 420px;
-      height: 420px;
-      bottom: -180px;
-      right: -80px;
-      border-bottom: none;
-      border-left: none;
     }
 
     /* FLOW (onboarding) */
@@ -292,9 +320,10 @@
 
     .flow-main {
       position: relative;
-      overflow: visible; /* allow full height on mobile */
+      overflow: visible; /* so content isn't cut off */
       min-height: 310px;
       margin-top: 1.3rem;
+      transition: height 0.3s ease-out;
     }
 
     .steps-track {
@@ -314,12 +343,12 @@
       display: flex;
       flex-direction: column;
       justify-content: flex-start;
-      padding: 0.5rem 3rem 1.6rem;
+      padding: 0.5rem 3rem 2.4rem; /* more bottom padding for mobile */
     }
 
     @media (max-width: 720px) {
       .step {
-        padding: 0.5rem 1.2rem 1.8rem;
+        padding: 0.5rem 1.2rem 2.6rem;
       }
     }
 
@@ -486,7 +515,7 @@
     .reviews {
       padding: 1.6rem 1.4rem 2rem;
       border-top: 1px solid rgba(255, 255, 255, 0.16);
-      background: rgba(8, 10, 25, 0.9);
+      background: rgba(8, 10, 25, 0.96);
       backdrop-filter: blur(10px);
     }
 
@@ -587,7 +616,7 @@
       padding: 1.2rem 1.4rem 1.6rem;
       font-size: 0.8rem;
       color: var(--text-muted);
-      background: rgba(5, 8, 21, 0.96);
+      background: rgba(8, 10, 25, 0.96); /* same as reviews so it doesn't creep up visually */
     }
 
     .footer-inner {
@@ -628,13 +657,16 @@
   </style>
 </head>
 <body>
+  <div class="stars"></div>
   <div class="swirl"></div>
 
   <!-- NAV -->
   <header>
     <div class="nav-inner">
       <div class="brand">
-        <div class="brand-badge"></div>
+        <div class="brand-badge">
+          <div class="brand-badge-inner-swirl"></div>
+        </div>
         <div class="brand-text-main"><span>Looma AI</span></div>
       </div>
     </div>
@@ -876,6 +908,7 @@
       const flowArea = document.getElementById('flowArea');
       const dotsContainer = document.getElementById('progressDots');
       const flowLabel = document.getElementById('flowLabel');
+      const flowMain = document.querySelector('.flow-main');
 
       let currentStep = 0;
       stepTotalEl.textContent = totalSteps.toString();
@@ -908,6 +941,19 @@
         btnNext.disabled = currentStep === totalSteps - 1;
       }
 
+      function setFlowHeight(stepEl) {
+        if (!flowMain || !stepEl) return;
+        // Temporarily ensure it's visible to measure
+        const prevPosition = stepEl.style.position;
+        const prevOpacity = stepEl.style.opacity;
+        stepEl.style.position = 'relative';
+        stepEl.style.opacity = '1';
+        const height = stepEl.offsetHeight;
+        stepEl.style.position = prevPosition;
+        stepEl.style.opacity = prevOpacity;
+        flowMain.style.height = height + 'px';
+      }
+
       function goToStep(newIndex, direction) {
         if (newIndex < 0 || newIndex >= totalSteps || newIndex === currentStep) return;
 
@@ -932,6 +978,7 @@
         stepCurrentEl.textContent = (currentStep + 1).toString();
         updateDots(currentStep);
         updateLabelAndButtons();
+        setFlowHeight(nextEl);
       }
 
       btnNext.addEventListener('click', function () {
@@ -970,8 +1017,14 @@
         touchStartY = null;
       }, { passive: true });
 
-      // initial state
+      // initial height
+      setFlowHeight(steps[currentStep]);
       updateLabelAndButtons();
+
+      // adjust height on resize
+      window.addEventListener('resize', function () {
+        setFlowHeight(steps[currentStep]);
+      });
     })();
   </script>
 </body>
