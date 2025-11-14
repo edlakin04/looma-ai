@@ -15,12 +15,14 @@
       --accent: #ff7b29;
       --accent-soft: rgba(255, 123, 41, 0.5);
       --accent-softest: rgba(255, 123, 41, 0.16);
+      --accent-secondary: #7b5cff;
+      --accent-teal: #19c1d8;
       --text-main: #f7f7ff;
       --text-soft: #c3c7d9;
       --border-subtle: rgba(255, 255, 255, 0.06);
       --card-bg: rgba(6, 7, 13, 0.9);
-      --green-start: #00c853;
-      --green-end: #00e676;
+      --green-start: #25d366;
+      --green-end: #128c7e;
     }
 
     * {
@@ -36,10 +38,11 @@
     body {
       font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       background:
-        radial-gradient(circle at 10% 20%, rgba(255, 123, 41, 0.25) 0, transparent 45%),
-        radial-gradient(circle at 80% 0%, rgba(255, 184, 108, 0.18) 0, transparent 55%),
-        radial-gradient(circle at 0% 100%, rgba(255, 123, 41, 0.22) 0, transparent 50%),
-        linear-gradient(135deg, #03030a 0%, #050714 40%, #020308 75%, #05060a 100%);
+        radial-gradient(circle at 10% 20%, rgba(255, 123, 41, 0.3) 0, transparent 45%),
+        radial-gradient(circle at 85% 15%, rgba(123, 92, 255, 0.28) 0, transparent 55%),
+        radial-gradient(circle at 12% 85%, rgba(25, 193, 216, 0.3) 0, transparent 50%),
+        radial-gradient(circle at 90% 75%, rgba(255, 184, 108, 0.22) 0, transparent 55%),
+        linear-gradient(135deg, #050317 0%, #050716 35%, #041724 70%, #060312 100%);
       color: var(--text-main);
       -webkit-font-smoothing: antialiased;
       overflow-x: hidden;
@@ -58,21 +61,22 @@
 
     body::before {
       background-image:
-        radial-gradient(1px 1px at 10% 30%, rgba(255, 255, 255, 0.28) 0, transparent 60%),
-        radial-gradient(1px 1px at 40% 10%, rgba(255, 255, 255, 0.15) 0, transparent 60%),
-        radial-gradient(1px 1px at 80% 40%, rgba(255, 255, 255, 0.18) 0, transparent 55%),
+        radial-gradient(1px 1px at 10% 30%, rgba(255, 255, 255, 0.3) 0, transparent 60%),
+        radial-gradient(1px 1px at 40% 10%, rgba(255, 255, 255, 0.18) 0, transparent 60%),
+        radial-gradient(1px 1px at 80% 40%, rgba(255, 255, 255, 0.2) 0, transparent 55%),
         radial-gradient(1px 1px at 65% 80%, rgba(255, 255, 255, 0.22) 0, transparent 60%),
-        radial-gradient(1px 1px at 20% 75%, rgba(255, 255, 255, 0.15) 0, transparent 60%);
-      opacity: 0.6;
+        radial-gradient(1px 1px at 20% 75%, rgba(255, 255, 255, 0.17) 0, transparent 60%);
+      opacity: 0.65;
     }
 
     body::after {
       background-image:
         radial-gradient(circle at 20% 0%, rgba(255, 255, 255, 0.12) 0, transparent 55%),
-        radial-gradient(circle at 80% 90%, rgba(255, 123, 41, 0.18) 0, transparent 60%),
+        radial-gradient(circle at 80% 90%, rgba(255, 123, 41, 0.2) 0, transparent 60%),
+        radial-gradient(circle at 0% 100%, rgba(123, 92, 255, 0.2) 0, transparent 60%),
         repeating-radial-gradient(circle at 50% -10%, rgba(255, 255, 255, 0.07), transparent 0.5px, transparent 18px);
       mix-blend-mode: screen;
-      opacity: 0.2;
+      opacity: 0.25;
     }
 
     main {
@@ -103,8 +107,8 @@
       backdrop-filter: blur(18px);
       background: linear-gradient(
         to bottom,
-        rgba(3, 4, 10, 0.92),
-        rgba(3, 4, 10, 0.82),
+        rgba(3, 4, 10, 0.95),
+        rgba(3, 4, 10, 0.85),
         transparent
       );
       border-bottom: 1px solid rgba(255, 255, 255, 0.04);
@@ -127,10 +131,10 @@
       background:
         radial-gradient(circle at 30% 20%, #fff 0, rgba(255, 255, 255, 0) 60%),
         radial-gradient(circle at 80% 80%, rgba(255, 123, 41, 0.85) 0, rgba(255, 123, 41, 0.1) 70%),
-        radial-gradient(circle at 0% 100%, rgba(255, 184, 108, 0.9) 0, rgba(255, 184, 108, 0) 65%);
+        radial-gradient(circle at 0% 100%, rgba(123, 92, 255, 0.8) 0, rgba(123, 92, 255, 0) 65%);
       box-shadow:
-        0 0 15px rgba(255, 123, 41, 0.7),
-        0 0 32px rgba(255, 123, 41, 0.5);
+        0 0 18px rgba(255, 123, 41, 0.7),
+        0 0 34px rgba(123, 92, 255, 0.65);
       position: relative;
       overflow: hidden;
     }
@@ -187,6 +191,7 @@
       margin-bottom: 0.9rem;
       text-shadow:
         0 0 18px rgba(255, 123, 41, 0.3),
+        0 0 30px rgba(22, 219, 255, 0.35),
         0 0 30px rgba(0, 0, 0, 0.7);
     }
 
@@ -226,8 +231,9 @@
       width: 1.2rem;
       height: 1.2rem;
       border-radius: 999px;
-      background: radial-gradient(circle at 30% 20%, #fff 0, rgba(255, 255, 255, 0) 60%),
-                  radial-gradient(circle at 80% 80%, var(--accent) 0, rgba(255, 123, 41, 0.4) 70%);
+      background:
+        radial-gradient(circle at 30% 20%, #fff 0, rgba(255, 255, 255, 0) 60%),
+        radial-gradient(circle at 80% 80%, var(--accent) 0, rgba(255, 123, 41, 0.4) 70%);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -243,8 +249,8 @@
       margin: 0.75rem auto 0;
       font-size: 0.8rem;
       line-height: 1.6;
-      color: rgba(226, 231, 255, 0.85);
-      opacity: 0.9;
+      color: rgba(226, 231, 255, 0.9);
+      opacity: 0.95;
     }
 
     @media (min-width: 768px) {
@@ -273,7 +279,7 @@
       font-size: 0.8rem;
       letter-spacing: 0.18em;
       text-transform: uppercase;
-      color: rgba(243, 244, 255, 0.7);
+      color: rgba(243, 244, 255, 0.8);
       display: inline-flex;
       align-items: center;
       gap: 0.35rem;
@@ -284,17 +290,18 @@
       width: 11px;
       height: 11px;
       border-radius: 999px;
-      background: radial-gradient(circle at 30% 20%, #fff 0, rgba(255, 255, 255, 0) 55%),
-                  radial-gradient(circle at 80% 80%, var(--accent) 0, rgba(255, 123, 41, 0.05) 80%);
+      background:
+        radial-gradient(circle at 30% 20%, #fff 0, rgba(255, 255, 255, 0) 55%),
+        radial-gradient(circle at 80% 80%, var(--accent) 0, rgba(255, 123, 41, 0.05) 80%);
       box-shadow:
         0 0 14px rgba(255, 123, 41, 0.8),
-        0 0 28px rgba(255, 123, 41, 0.65);
+        0 0 26px rgba(255, 123, 41, 0.65);
     }
 
     .onboarding-step-indicator {
       margin-top: 0.4rem;
       font-size: 0.9rem;
-      color: rgba(219, 223, 255, 0.92);
+      color: rgba(219, 223, 255, 0.95);
     }
 
     .onboarding-flow {
@@ -306,9 +313,11 @@
       position: relative;
       border-radius: 20px;
       padding: 1.4rem 1.1rem 1.6rem;
-      background: radial-gradient(circle at 0 0, rgba(255, 255, 255, 0.09) 0, transparent 58%),
-                  radial-gradient(circle at 100% 0, rgba(255, 123, 41, 0.15) 0, transparent 55%),
-                  linear-gradient(135deg, rgba(14, 15, 26, 0.96), rgba(5, 6, 13, 0.98));
+      background:
+        radial-gradient(circle at 0 0, rgba(255, 255, 255, 0.08) 0, transparent 58%),
+        radial-gradient(circle at 100% 0, rgba(255, 123, 41, 0.15) 0, transparent 55%),
+        radial-gradient(circle at 0 100%, rgba(25, 193, 216, 0.1) 0, transparent 52%),
+        linear-gradient(135deg, rgba(16, 17, 31, 0.97), rgba(5, 6, 18, 0.98));
       box-shadow:
         0 18px 45px rgba(0, 0, 0, 0.75),
         0 0 0 1px rgba(255, 255, 255, 0.03);
@@ -320,11 +329,11 @@
       position: absolute;
       inset: -40%;
       background:
-        radial-gradient(circle at 20% 30%, rgba(255, 123, 41, 0.08) 0, transparent 52%),
-        radial-gradient(circle at 80% 70%, rgba(255, 255, 255, 0.06) 0, transparent 55%),
-        linear-gradient(120deg, rgba(255, 123, 41, 0.22), transparent 60%);
+        radial-gradient(circle at 20% 30%, rgba(255, 123, 41, 0.09) 0, transparent 52%),
+        radial-gradient(circle at 80% 70%, rgba(123, 92, 255, 0.16) 0, transparent 55%),
+        linear-gradient(120deg, rgba(255, 123, 41, 0.2), transparent 60%);
       mix-blend-mode: soft-light;
-      opacity: 0.9;
+      opacity: 0.95;
       pointer-events: none;
     }
 
@@ -362,7 +371,7 @@
       font-size: 0.78rem;
       text-transform: uppercase;
       letter-spacing: 0.16em;
-      color: rgba(249, 250, 255, 0.8);
+      color: rgba(249, 250, 255, 0.9);
       padding: 0.18rem 0.6rem;
       border-radius: 999px;
       background: linear-gradient(
@@ -370,7 +379,7 @@
         rgba(255, 123, 41, 0.32),
         rgba(255, 123, 41, 0.16)
       );
-      border: 1px solid rgba(255, 123, 41, 0.6);
+      border: 1px solid rgba(255, 123, 41, 0.7);
     }
 
     .flow-step-title {
@@ -390,9 +399,9 @@
       margin-top: 0.7rem;
       font-size: 0.86rem;
       line-height: 1.5;
-      color: rgba(212, 218, 255, 0.92);
+      color: rgba(212, 218, 255, 0.95);
       padding-left: 0.75rem;
-      border-left: 2px solid rgba(255, 123, 41, 0.8);
+      border-left: 2px solid rgba(255, 123, 41, 0.9);
     }
 
     .flow-step-note strong {
@@ -410,19 +419,19 @@
       display: inline-flex;
       align-items: center;
       gap: 0.55rem;
-      padding: 0.65rem 1.4rem;
+      padding: 0.7rem 1.6rem;
       border-radius: 999px;
-      border: none;
+      border: 0;
       outline: none;
       font-size: 0.92rem;
       font-weight: 600;
       cursor: pointer;
       text-decoration: none;
-      color: #041206;
+      color: #e9fff5;
       background-image: linear-gradient(135deg, var(--green-start), var(--green-end));
       box-shadow:
-        0 0 16px rgba(0, 230, 118, 0.7),
-        0 11px 26px rgba(0, 0, 0, 0.8);
+        0 0 14px rgba(37, 211, 102, 0.7),
+        0 11px 26px rgba(0, 0, 0, 0.85);
       position: relative;
       overflow: hidden;
     }
@@ -436,7 +445,7 @@
       content: "";
       position: absolute;
       inset: 0;
-      background: radial-gradient(circle at 0 0, rgba(255, 255, 255, 0.45), transparent 55%);
+      background: radial-gradient(circle at 0 0, rgba(255, 255, 255, 0.32), transparent 60%);
       opacity: 0;
       transition: opacity 0.25s ease;
     }
@@ -446,15 +455,19 @@
     }
 
     .whatsapp-icon {
-      width: 18px;
-      height: 18px;
+      width: 20px;
+      height: 20px;
       border-radius: 999px;
-      border: 1px solid rgba(4, 18, 6, 0.4);
+      background: rgba(3, 16, 9, 0.4);
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      font-size: 0.78rem;
-      background: rgba(4, 18, 6, 0.06);
+    }
+
+    .whatsapp-icon svg {
+      width: 12px;
+      height: 12px;
+      display: block;
     }
 
     .flow-meta {
@@ -474,29 +487,26 @@
       width: 9px;
       height: 9px;
       border-radius: 999px;
-      border: 1px solid rgba(255, 255, 255, 0.28);
-      background: rgba(6, 8, 17, 0.9);
-      box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.7);
-      opacity: 0.65;
+      border: 1px solid rgba(255, 123, 41, 0.6);
+      background: transparent;
+      opacity: 0.58;
       transition: all 0.25s ease;
     }
 
     .flow-dot.active {
       width: 24px;
-      background:
-        radial-gradient(circle at 30% 20%, #fff 0, transparent 55%),
-        radial-gradient(circle at 80% 80%, rgba(255, 123, 41, 0.95) 0, rgba(255, 123, 41, 0.22) 70%);
-      border-color: rgba(255, 123, 41, 0.9);
+      background: linear-gradient(90deg, var(--accent), #ffc085);
+      border-color: rgba(255, 123, 41, 0.98);
       opacity: 1;
       box-shadow:
-        0 0 14px rgba(255, 123, 41, 0.8),
-        0 0 26px rgba(255, 123, 41, 0.65);
+        0 0 12px rgba(255, 123, 41, 0.85),
+        0 0 24px rgba(255, 123, 41, 0.7);
     }
 
     .flow-helper {
       font-size: 0.82rem;
       text-align: center;
-      color: rgba(214, 219, 248, 0.9);
+      color: rgba(214, 219, 248, 0.95);
       min-height: 2.6em;
       display: flex;
       align-items: center;
@@ -516,7 +526,9 @@
       padding: 0.55rem 1.1rem;
       border-radius: 999px;
       border: 1px solid rgba(255, 255, 255, 0.26);
-      background: radial-gradient(circle at 0 0, rgba(255, 255, 255, 0.08), transparent 55%);
+      background:
+        radial-gradient(circle at 0 0, rgba(255, 255, 255, 0.08), transparent 55%),
+        linear-gradient(135deg, rgba(12, 14, 23, 0.96), rgba(5, 6, 14, 0.98));
       color: var(--text-main);
       font-size: 0.88rem;
       font-weight: 500;
@@ -530,11 +542,13 @@
 
     .flow-btn span {
       font-size: 0.8rem;
-      opacity: 0.85;
+      opacity: 0.88;
     }
 
     .flow-btn:hover:not(:disabled) {
-      background: radial-gradient(circle at 0 0, rgba(255, 255, 255, 0.12), transparent 60%);
+      background:
+        radial-gradient(circle at 0 0, rgba(255, 255, 255, 0.12), transparent 60%),
+        linear-gradient(135deg, rgba(16, 18, 30, 0.98), rgba(7, 8, 18, 1));
       border-color: rgba(255, 255, 255, 0.42);
       box-shadow:
         0 0 0 1px rgba(255, 255, 255, 0.02),
@@ -578,11 +592,13 @@
       margin-top: 3.1rem;
       padding: 2.6rem 0 2.4rem;
       background:
+        radial-gradient(circle at 15% 0, rgba(123, 92, 255, 0.13) 0, transparent 55%),
+        radial-gradient(circle at 90% 100%, rgba(255, 123, 41, 0.16) 0, transparent 60%),
         linear-gradient(
           to bottom,
-          rgba(3, 4, 10, 0.96),
-          rgba(2, 3, 8, 0.98),
-          rgba(2, 2, 5, 0.98)
+          rgba(3, 4, 12, 0.98),
+          rgba(3, 4, 10, 0.99),
+          rgba(2, 2, 6, 0.99)
         );
       box-shadow: 0 -1px 0 rgba(255, 255, 255, 0.02);
     }
@@ -630,8 +646,9 @@
     }
 
     .review-card {
-      background: radial-gradient(circle at 0 0, rgba(255, 255, 255, 0.03), transparent 55%),
-                  linear-gradient(135deg, rgba(11, 13, 22, 0.98), rgba(5, 6, 13, 0.98));
+      background:
+        radial-gradient(circle at 0 0, rgba(255, 255, 255, 0.03) 0, transparent 55%),
+        linear-gradient(135deg, rgba(11, 13, 26, 0.98), rgba(5, 6, 15, 0.99));
       border-radius: 18px;
       padding: 1rem 1.1rem 1.1rem;
       border: 1px solid var(--border-subtle);
@@ -691,12 +708,13 @@
     /* Footer */
 
     .site-footer {
-      background: radial-gradient(circle at 50% -40%, rgba(255, 123, 41, 0.16) 0, transparent 55%),
-                  linear-gradient(
-                    to bottom,
-                    rgba(2, 3, 8, 0.98),
-                    #020207
-                  );
+      background:
+        radial-gradient(circle at 70% -40%, rgba(255, 123, 41, 0.18) 0, transparent 55%),
+        linear-gradient(
+          to bottom,
+          rgba(2, 3, 10, 0.99),
+          #020208
+        );
       border-top: 1px solid rgba(255, 255, 255, 0.03);
       padding: 0.9rem 0 1.1rem;
     }
@@ -868,7 +886,11 @@
 
                 <div class="whatsapp-cta">
                   <a href="https://chat.whatsapp.com/your-group-link" target="_blank" rel="noopener noreferrer" class="whatsapp-btn">
-                    <span class="whatsapp-icon">💬</span>
+                    <span class="whatsapp-icon" aria-hidden="true">
+                      <svg viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M6.2 3.5h7.6c.7 0 1.2.5 1.2 1.2v10.6c0 .7-.5 1.2-1.2 1.2H6.2c-.7 0-1.2-.5-1.2-1.2V4.7c0-.7.5-1.2 1.2-1.2zm3.8 10.1h-.2c-1.6-.3-2.9-1.6-3.2-3.2 0-.1.1-.3.3-.3l1.2-.1c.1 0 .3.1.3.2l.3 1.1c0 .1 0 .2-.1.3l-.3.3c.5.7 1.1 1.2 1.8 1.5l.3-.3c.1-.1.2-.1.3-.1l1.1.3c.1 0 .2.2.2.3l-.1 1.2c0 .1-.1.3-.3.3-.5.1-.9.1-1.3.1z" fill="currentColor" />
+                      </svg>
+                    </span>
                     <span>Join the WhatsApp group</span>
                   </a>
                 </div>
@@ -977,7 +999,6 @@
       const btnBack = document.getElementById("flow-back");
       const btnNext = document.getElementById("flow-next");
       const stepsContainer = document.getElementById("flow-steps");
-      const wrapper = document.getElementById("flow-wrapper");
       const flow = document.getElementById("onboarding-flow");
 
       const totalSteps = steps.length;
@@ -1052,6 +1073,8 @@
         const touch = e.touches[0];
         touchStartX = touch.clientX;
         touchStartY = touch.clientY;
+        touchEndX = touchStartX;
+        touchEndY = touchStartY;
       }
 
       function handleTouchMove(e) {
@@ -1083,28 +1106,33 @@
 
       // Height management so content doesn't overlap on small screens
       function adjustStepsHeight() {
-        // Temporarily show all steps to measure their heights
         let maxHeight = 0;
+
+        // Temporarily make steps measurable
         steps.forEach(step => {
           const wasActive = step.classList.contains("active");
-          // ensure it's measurable
-          if (!wasActive) step.classList.add("measuring-temp-visible");
+          const prevStyle = {
+            position: step.style.position,
+            opacity: step.style.opacity,
+            transform: step.style.transform
+          };
+
           step.style.position = "relative";
           step.style.opacity = "1";
           step.style.transform = "none";
+
           const rect = step.getBoundingClientRect();
           const h = rect.height;
           if (h > maxHeight) maxHeight = h;
-          // reset
+
+          // restore style for non-active steps
           if (!wasActive) {
-            step.classList.remove("measuring-temp-visible");
-            step.style.position = "absolute";
-            step.style.opacity = "";
-            step.style.transform = "";
+            step.style.position = prevStyle.position || "absolute";
+            step.style.opacity = prevStyle.opacity || "";
+            step.style.transform = prevStyle.transform || "";
           }
         });
 
-        // Set min-height based on tallest step
         if (maxHeight > 0) {
           stepsContainer.style.minHeight = maxHeight + "px";
         } else {
@@ -1118,10 +1146,8 @@
       updateButtons(currentIndex);
       updateDots(currentIndex);
 
-      // Adjust heights after fonts load and on resize
       window.addEventListener("load", adjustStepsHeight);
       window.addEventListener("resize", function () {
-        // debounce using requestAnimationFrame
         window.requestAnimationFrame(adjustStepsHeight);
       });
 
